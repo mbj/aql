@@ -9,11 +9,12 @@ module AQL
     #
     # @api private
     #
-    def to_aql
+    def aql
       emitter = Buffer.new
       emit(emitter)
       emitter.content
     end
+    memoize :aql
 
   private
 

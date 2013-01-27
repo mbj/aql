@@ -1,8 +1,8 @@
 require 'spec_helper'
 
-describe AQL::Node, 'to_aql' do
+describe AQL::Node, 'aql' do
 
-  subject { object.to_aql }
+  subject { object.aql }
 
   let(:class_under_test) do
     Class.new(described_class) do

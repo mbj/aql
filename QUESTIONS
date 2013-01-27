@@ -1,1 +1,2 @@
 * Maximum length of a literal string
+* Maximum size of IEEE 754 numbers, eg 32bit or 64bit on the serverside?

@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe AQL::Node::Literal::Number, '#aql' do
-  let(:object) { described_class.new(string) }
+  let(:object) { described_class.new(number) }
 
   examples = {
     1          => '1',
@@ -14,9 +14,9 @@ describe AQL::Node::Literal::Number, '#aql' do
     -4.87e103  => '-4.87e+103'
   }
 
-  examples.each do |string, expectation|
-    context "with #{string.inspect} as input" do
-      let(:string)       { string      }
+  examples.each do |number, expectation|
+    context "with #{number.inspect} as input" do
+      let(:number)       { number      }
       let(:expected_aql) { expectation }
 
       it_should_behave_like 'Node#aql'

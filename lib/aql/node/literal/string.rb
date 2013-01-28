@@ -3,6 +3,7 @@ module AQL
     class Literal
       # Literal string node
       class String < self
+        handle(::String)
         include Composition.new(:string)
 
       private

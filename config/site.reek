@@ -22,7 +22,8 @@ UncommunicativeMethodName:
   - !ruby/regexp /[A-Z]/
 LongParameterList:
   max_params: 2  # TODO: decrease max_params to 2
-  exclude: []
+  exclude: 
+  - AQL::Buffer#wrap_delimited
   enabled: true
   overrides: {}
 FeatureEnvy:

@@ -3,6 +3,8 @@ module AQL
     class Literal
       # Literal number node
       class Number < self
+        handle(Float)
+        handle(Fixnum)
         include Composition.new(:number)
 
       private

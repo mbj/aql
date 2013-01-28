@@ -16,6 +16,19 @@ module AQL
     end
     memoize :aql
 
+    # Visit node
+    #
+    # @param [Buffer] buffer
+    #
+    # @return [self]
+    #
+    # @api private
+    #
+    def visit(buffer)
+      emit(buffer)
+      self
+    end
+
   private
 
     # Emit aql

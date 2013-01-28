@@ -23,7 +23,8 @@ describe AQL::Node::Literal::Singleton, '.construct' do
     let(:input) { :foo }
 
     it 'should raise error' do
-      expect { subject }.to raise_error(KeyError)
+      expected = RUBY_VERSION < '1.9' ? IndexError : KeyError
+      expect { subject }.to raise_error(expected)
     end
   end
 end

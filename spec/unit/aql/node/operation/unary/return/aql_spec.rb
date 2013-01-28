@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe AQL::Node::Operation::Return, '#aql' do
+describe AQL::Node::Operation::Unary::Return, '#aql' do
   let(:object) { described_class.new(expression) }
 
   context 'with scalar expression' do

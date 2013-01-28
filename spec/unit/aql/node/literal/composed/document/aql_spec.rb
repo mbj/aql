@@ -4,7 +4,9 @@ describe AQL::Node::Literal::Composed::Document, '#aql' do
   let(:object) { AQL::Node::Literal.build(input) }
 
   if RUBY_VERSION < '1.9'
-    pending 'Test for ordered hashes, ruby 1.8 has unordered ones'
+    before do
+      pending 'Test for ordered hashes, ruby 1.8 has unordered ones'
+    end
   end
 
   examples = {

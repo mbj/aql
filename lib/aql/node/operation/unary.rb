@@ -40,6 +40,35 @@ module AQL
           KEYWORD = :RETURN
         end
 
+        # Abstract base class for sort orders
+        class Direction < self
+
+        private
+
+          # Emit node
+          #
+          # @param [Buffer] buffer
+          #
+          # @return [undefined]
+          #
+          # @api private
+          #
+          def emit(buffer)
+            expression.visit(buffer)
+            buffer.append(" #{keyword}")
+          end
+
+          # Asecnding sort direction
+          class Ascending < self
+            KEYWORD = :ASC
+          end
+
+          # Descending sort direction
+          class Descending < self
+            KEYWORD = :DESC
+          end
+
+        end
       end
     end
   end

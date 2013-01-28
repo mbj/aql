@@ -42,6 +42,24 @@ module AQL
       append(close)
     end
 
+    # Emit binary
+    #
+    # @param [Node] left
+    # @param [Symbol] operator
+    # @param [Node] right
+    #
+    # @return [self]
+    #
+    # @api private
+    #
+    def binary(left, operator, right)
+      append('(')
+      left.visit(self)
+      append(" #{operator} ")
+      right.visit(self)
+      append(')')
+    end
+
     # Append content to buffer
     #
     # @param [String] content

@@ -21,9 +21,10 @@ UncommunicativeMethodName:
   - !ruby/regexp /[0-9]$/
   - !ruby/regexp /[A-Z]/
 LongParameterList:
-  max_params: 2  # TODO: decrease max_params to 2
+  max_params: 2
   exclude: 
-  - AQL::Buffer#wrap_delimited
+  - AQL::Buffer#wrap_delimited # 3 params
+  - AQL::Buffer#binary         # 3 params
   enabled: true
   overrides: {}
 FeatureEnvy:
@@ -53,7 +54,8 @@ NestedIterators:
   max_allowed_nesting: 1
 LongMethod:
   max_statements: 5
-  exclude: []
+  exclude: 
+  - AQL::Buffer#binary # 6 statements
   enabled: true
 Duplication:
   allow_calls: []

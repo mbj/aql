@@ -8,6 +8,8 @@ end
 
 require 'aql/buffer'
 require 'aql/node'
+require 'aql/constants'
+require 'aql/node/name'
 require 'aql/node/literal'
 require 'aql/node/literal/singleton'
 require 'aql/node/literal/primitive'

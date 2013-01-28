@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe AQL::Node::Literal::List, '#aql' do
+describe AQL::Node::Literal::Composed::List, '#aql' do
   let(:object) { AQL::Node::Literal.build(input) }
 
   examples = {

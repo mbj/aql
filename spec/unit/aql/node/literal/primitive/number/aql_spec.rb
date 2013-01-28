@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe AQL::Node::Literal::Number, '#aql' do
+describe AQL::Node::Literal::Primitive::Number, '#aql' do
   let(:object) { described_class.new(number) }
 
   examples = {

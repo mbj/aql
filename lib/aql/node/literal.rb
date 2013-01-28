@@ -2,7 +2,6 @@ module AQL
   class Node
     # Abstract base class for literal nodes 
     class Literal < self
-
       REGISTRY = {}
 
       # Register handler
@@ -35,14 +34,12 @@ module AQL
 
       # Construct object
       #
-      # @param [Object] object
-      #
       # @return [Node::Literal]
       #
       # @api private
       #
-      def self.construct(object)
-        new(object)
+      def self.construct(*args)
+        new(*args)
       end
 
     end

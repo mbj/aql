@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe AQL::Node::Literal::List, '.constant' do
+describe AQL::Node::Literal::Composed::List, '.constant' do
   let(:object) { described_class }
 
   subject { object.construct(input) }
@@ -16,8 +16,8 @@ describe AQL::Node::Literal::List, '.constant' do
 
     it 'should return correct ast' do
       should eql(described_class.new([
-        AQL::Node::Literal::Number.new(1),
-        AQL::Node::Literal::Number.new(2)
+        AQL::Node::Literal::Primitive::Number.new(1),
+        AQL::Node::Literal::Primitive::Number.new(2)
       ]))
     end
 
@@ -28,8 +28,8 @@ describe AQL::Node::Literal::List, '.constant' do
 
     it 'should return correct ast' do
       should eql(described_class.new([
-        AQL::Node::Literal::Number.new(1),
-        AQL::Node::Literal::List.construct([2])
+        AQL::Node::Literal::Primitive::Number.new(1),
+        AQL::Node::Literal::Composed::List.construct([2])
       ]))
     end
   end

@@ -3,13 +3,13 @@ module AQL
     class Literal
       # Singleton literal
       class Singleton < self
+        include Composition.new(:token)
+
         handle(NilClass)
         handle(TrueClass)
         handle(FalseClass)
 
         private_class_method :new
-
-        include Composition.new(:content)
 
         # Construct object
         #
@@ -25,14 +25,14 @@ module AQL
 
       private
 
-        # Emit content
+        # Emit node
         #
         # @return [undefined]
         #
         # @api private
         #
         def emit(buffer)
-          buffer.append(content)
+          buffer.append(token)
         end
 
         NULL  = new('null')

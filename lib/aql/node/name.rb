@@ -13,23 +13,32 @@ module AQL
       # @return [undefined]
       #
       def emit(buffer)
-        buffer.append(quoted_name)
+        buffer.append(emittable_name)
       end
 
-      # Return quoted name
+      # Return emittable name
       #
       # @return [String]
       #   quoted string, if needed 
       #
       # @api private
       #
-      def quoted_name
-        local = name
+      def emittable_name
         if keyword? 
-          %Q(`#{local}`) 
+          quoted_name
         else
-          local
+          name
         end
+      end
+
+      # Return quoted name
+      #
+      # @return [String]
+      #
+      # @api private
+      #
+      def quoted_name
+        %Q(`#{name}`) 
       end
 
       # Test if name is keyword

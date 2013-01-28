@@ -27,9 +27,10 @@ module AQL
       #
       def self.build(object)
         klass = object.class
-        REGISTRY.fetch(klass) do
+        handler = REGISTRY.fetch(klass) do
           raise "No support for literal #{klass}"
-        end.construct(object)
+        end
+        handler.construct(object)
       end
 
       # Construct object

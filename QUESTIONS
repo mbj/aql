@@ -3,3 +3,4 @@
 * Literal value of NaN ?
 * List nesting limit?
 * Document nesting limit?
+* Are names allowed to contain whitespace with the escaped syntax?

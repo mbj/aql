@@ -1,22 +1,22 @@
 require 'spec_helper'
 
-describe AQL::Node::Literal::Constant, '.construct' do
+describe AQL::Node::Literal::Singleton, '.construct' do
   let(:object) { described_class }
   subject { object.construct(input) }
 
   context 'with false as input' do
     let(:input) { false }
-    it { should be(AQL::Node::Literal::Constant::FALSE) }
+    it { should be(AQL::Node::Literal::Singleton::FALSE) }
   end
 
   context 'with true as input' do
     let(:input) { true }
-    it { should be(AQL::Node::Literal::Constant::TRUE) }
+    it { should be(AQL::Node::Literal::Singleton::TRUE) }
   end
 
   context 'with nil as input' do
     let(:input) { nil }
-    it { should be(AQL::Node::Literal::Constant::NULL) }
+    it { should be(AQL::Node::Literal::Singleton::NULL) }
   end
 
   context 'with anything else' do

@@ -1,8 +1,8 @@
 module AQL
   class Node
     class Literal
-      # Constant literal
-      class Constant < self
+      # Singleton literal
+      class Singleton < self
         handle(NilClass)
         handle(TrueClass)
         handle(FalseClass)
@@ -15,7 +15,7 @@ module AQL
         #
         # @param [Object] object
         #
-        # @return [Node::Literal::Constant]
+        # @return [Node::Literal::Singleton]
         #
         # @api private
         #

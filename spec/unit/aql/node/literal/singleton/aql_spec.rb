@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe AQL::Node::Literal::Constant do
+describe AQL::Node::Literal::Singleton do
   let(:class_under_test) do
     Class.new(described_class) do
       public_class_method :new

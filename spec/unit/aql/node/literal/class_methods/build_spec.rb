@@ -28,17 +28,17 @@ describe AQL::Node::Literal, '.build' do
 
     context 'nil' do
       let(:input) { nil }
-      it { should be(AQL::Node::Literal::Constant::NULL) }
+      it { should be(AQL::Node::Literal::Singleton::NULL) }
     end
 
     context 'true' do
       let(:input) { true }
-      it { should be(AQL::Node::Literal::Constant::TRUE) }
+      it { should be(AQL::Node::Literal::Singleton::TRUE) }
     end
 
     context 'false' do
       let(:input) { false }
-      it { should be(AQL::Node::Literal::Constant::FALSE) }
+      it { should be(AQL::Node::Literal::Singleton::FALSE) }
     end
 
   end
@@ -67,7 +67,7 @@ describe AQL::Node::Literal, '.build' do
         specify do 
           should eql(AQL::Node::Literal::List.new([
             AQL::Node::Literal::Number.new(1),
-            AQL::Node::Literal::Constant::FALSE
+            AQL::Node::Literal::Singleton::FALSE
           ]))
         end
       end

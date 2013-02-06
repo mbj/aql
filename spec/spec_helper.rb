@@ -1,5 +1,6 @@
 # encoding: utf-8
 
+require 'devtools'
 require 'aql'
 require 'rspec'
 

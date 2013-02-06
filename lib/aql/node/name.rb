@@ -26,20 +26,6 @@ module AQL
         %Q(`#{name}`) 
       end
 
-      # Test if name is keyword
-      #
-      # @return [true]
-      #   if name is keyword
-      #
-      # @return [false]
-      #   otherwise
-      #
-      # @api private
-      #
-      def keyword?
-        KEYWORDS.include?(name.upcase)
-      end
-
     end
   end
 end

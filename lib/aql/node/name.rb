@@ -13,22 +13,7 @@ module AQL
       # @return [undefined]
       #
       def emit(buffer)
-        buffer.append(emittable_name)
-      end
-
-      # Return emittable name
-      #
-      # @return [String]
-      #   quoted string, if needed 
-      #
-      # @api private
-      #
-      def emittable_name
-        if keyword? 
-          quoted_name
-        else
-          name
-        end
+        buffer.append(quoted_name)
       end
 
       # Return quoted name

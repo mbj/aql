@@ -1,0 +1,1 @@
+* Limit numeric emitter to values that fit into IEEE 754 64bit

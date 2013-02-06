@@ -1,6 +1,0 @@
-* Maximum length of a literal string
-* Maximum size of IEEE 754 numbers, eg 32bit or 64bit on the serverside?
-* Literal value of NaN ?
-* List nesting limit?
-* Document nesting limit?
-* Are names allowed to contain whitespace with the escaped syntax?

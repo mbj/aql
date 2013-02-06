@@ -9,7 +9,7 @@ describe AQL::Node::Operation::Unary::Direction, '#aql' do
 
   let(:foo)          { AQL::Node::Name.new('foo') }
   let(:object)       { class_under_test.new(foo)  }
-  let(:expected_aql) { 'foo KEYWORD'              }
+  let(:expected_aql) { '`foo` KEYWORD'              }
 
   it_should_behave_like 'Node#aql'
 end

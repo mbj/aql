@@ -10,7 +10,7 @@ describe AQL::Node::Operation, '#keyword' do
 
   subject { object.keyword }
 
-  let(:object)       { class_under_test.new  }
+  let(:object) { class_under_test.new  }
 
   it { should eql('KEYWORD') }
 end

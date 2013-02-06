@@ -10,7 +10,7 @@ describe AQL::Node::Attribute, '#aql' do
     let(:target_name) { 'foo' }
     let(:attribute_name) { 'bar' }
 
-    let(:expected_aql) { 'foo.bar' }
+    let(:expected_aql) { '`foo`.`bar`' }
 
     it_should_behave_like 'Node#aql'
   end

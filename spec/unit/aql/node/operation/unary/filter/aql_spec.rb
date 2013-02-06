@@ -16,7 +16,7 @@ describe AQL::Node::Operation::Unary::Filter, '#aql' do
       AQL::Node::Operator::Binary::LessThan.new(foo, AQL::Node::Literal.build(9))
     end
 
-    let(:expected_aql) { 'FILTER (foo < 9)' }
+    let(:expected_aql) { 'FILTER (`foo` < 9)' }
 
     it_should_behave_like 'Node#aql'
   end

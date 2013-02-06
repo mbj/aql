@@ -11,7 +11,7 @@ describe AQL::Node::Operation::Nary, '#aql' do
   let(:bar)          { AQL::Node::Name.new('bar') }
 
   let(:object)       { class_under_test.new([foo, bar]) }
-  let(:expected_aql) { 'KEYWORD foo, bar'               }
+  let(:expected_aql) { 'KEYWORD `foo`, `bar`'               }
 
   it_should_behave_like 'Node#aql'
 end

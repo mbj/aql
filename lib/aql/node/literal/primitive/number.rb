@@ -18,7 +18,7 @@ module AQL
           # @api private
           #
           def emit(buffer)
-            buffer.append(value)
+            buffer.append(value.to_s)
           end
 
         end

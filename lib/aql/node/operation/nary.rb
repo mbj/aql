@@ -17,7 +17,7 @@ module AQL
         #
         def emit(buffer)
           buffer.append("#{keyword} ")
-          buffer.wrap_delimited(nil, body, nil)
+          buffer.wrap_delimited('', body, '')
         end
 
         # Filter operation

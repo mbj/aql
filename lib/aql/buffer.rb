@@ -69,7 +69,7 @@ module AQL
     # @api private
     #
     def append(content)
-      @buffer << content
+      @buffer << self.class.utf8_encode(content)
       self
     end
 
@@ -81,6 +81,32 @@ module AQL
     #
     def content
       @buffer.join.freeze
+    end
+
+    if defined?(Encoding)
+      # Encode string in utf-8
+      #
+      # @param [String]
+      #
+      # @return [String]
+      #
+      # @api private
+      #
+      def self.utf8_encode(string)
+        string.encode(Encoding::UTF_8)
+      end
+    else
+      # Dummy encode string for rubies that do not support encoding hell
+      #
+      # @param [String]
+      #
+      # @return [Stirng]
+      #
+      # @api private
+      #
+      def self.utf8_encode(string)
+        string
+      end
     end
 
   private

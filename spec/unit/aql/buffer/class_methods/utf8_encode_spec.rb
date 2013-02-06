@@ -5,7 +5,7 @@ describe AQL::Buffer, '.utf8_encode' do
 
   unless defined?(Encoding)
     before do
-      pending "No support for encodings under #{Devtools.platform}"
+      pending "No support for encodings under #{Devtools.rvm}"
     end
   end
 

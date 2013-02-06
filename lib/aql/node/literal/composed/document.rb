@@ -15,9 +15,10 @@ module AQL
           # @api private
           #
           def self.construct(hash)
-            new(hash.map do |key, value|
+            attributes = hash.map do |key, value|
               Attribute.new(Literal.build(key), Literal.build(value))
-            end)
+            end
+            new(attributes)
           end
 
           # Literal document attribute

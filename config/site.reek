@@ -29,7 +29,7 @@ LongParameterList:
   overrides: {}
 FeatureEnvy:
   exclude: 
-  - Anima#attributes_hash
+  - AQL::Node::Block#emit # IMHO a false positive
   enabled: true
 ClassVariable:
   exclude: []

@@ -1,6 +1,7 @@
 module AQL
   # The emit buffer
   class Buffer
+    include Equalizer.new(:contents)
 
     # Initialize object
     #
@@ -86,7 +87,7 @@ module AQL
     if defined?(Encoding)
       # Encode string in utf-8
       #
-      # @param [String]
+      # @param [String] string
       #
       # @return [String]
       #
@@ -98,7 +99,7 @@ module AQL
     else
       # Dummy encode string for rubies that do not support encoding hell
       #
-      # @param [String]
+      # @param [String] string
       #
       # @return [Stirng]
       #

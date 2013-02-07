@@ -17,6 +17,8 @@ matrix:
     # Both do happily encode invalid utf-8 https://travis-ci.org/mbj/aql/jobs/4623894
     - rvm: ruby-head 
     - rvm: 2.0.0 
+    # SSL error https://travis-ci.org/mbj/aql/jobs/4648298
+    - rvm: jruby-head
 notifications:
   email:
     - mbj@seonic.net

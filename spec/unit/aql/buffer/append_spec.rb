@@ -42,8 +42,17 @@ describe AQL::Buffer, '#append' do
   context 'with non utf-8 encodable content' do
     let(:content)          { "\xC3\x28" }
 
+    let(:expected_message) do
+      case Devtools.rvm_name
+      when 'rbx'
+        '"\xC3" to UTF-8 in conversion from ASCII-8BIT to UTF-8'
+      else
+        '"\xC3" from ASCII-8BIT to UTF-8'
+      end
+    end
+
     it 'should raise error' do
-      expect { subject }.to raise_error(Encoding::UndefinedConversionError, '"\xC3" from ASCII-8BIT to UTF-8')
+      expect { subject }.to raise_error(Encoding::UndefinedConversionError, expected_message)
     end
   end
 

@@ -3,7 +3,7 @@ AQL
 
 [![Build Status](https://secure.travis-ci.org/mbj/aql.png?branch=master)](http://travis-ci.org/mbj/aql)
 [![Dependency Status](https://gemnasium.com/mbj/aql.png)](https://gemnasium.com/mbj/aql)
-[![Code Climate](https://codeclimate.com/badge.png)](https://codeclimate.com/github/mbj/aql)
+[![Code Climate](https://codeclimate.com/github/mbj/aql.png)](https://codeclimate.com/github/mbj/aql)
 
 Generator for Arango Query Language [AQL](http://www.arangodb.org/manuals/current/Aql.html) under ruby. The backend for [veritas-arango-adapter](https://github.com/mbj/veritas-arango-adapter).
 

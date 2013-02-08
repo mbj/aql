@@ -29,9 +29,10 @@ module AQL
           # @api private
           #
           def self.construct(object)
-            new(object.map do |item|
+            body = object.map do |item|
               Literal.build(item)
-            end)
+            end
+            new(body)
           end
 
         end

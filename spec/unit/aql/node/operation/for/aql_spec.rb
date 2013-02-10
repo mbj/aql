@@ -7,5 +7,5 @@ describe AQL::Node::Operation::For, '#aql' do
 
   let(:object)       { described_class.new(left, right, body) }
 
-  expect_aql('FOR `left` IN `right` `body`')
+  expect_aql('FOR `left` IN `right` (`body`)')
 end

@@ -21,8 +21,9 @@ module AQL
           left.visit(buffer)
           buffer.append(' IN ')
           right.visit(buffer)
-          buffer.append(' ')
+          buffer.append(' (')
           body.visit(buffer)
+          buffer.append(')')
         end
       end
     end

@@ -1,4 +1,7 @@
 ---
+UnusedParameters:
+  exclude: 
+  - AQL::Node#emit
 UncommunicativeParameterName:
   accept: []
   exclude: []

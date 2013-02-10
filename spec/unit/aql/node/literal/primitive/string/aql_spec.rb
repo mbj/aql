@@ -14,10 +14,8 @@ describe AQL::Node::Literal::Primitive::String, '#aql' do
 
   examples.each do |string, expectation|
     context "with #{string.inspect} as input" do
-      let(:string)       { string      }
-      let(:expected_aql) { expectation }
-
-      it_should_behave_like 'Node#aql'
+      let(:string) { string }
+      expect_aql(expectation)
     end
   end
 end

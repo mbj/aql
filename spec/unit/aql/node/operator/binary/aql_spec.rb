@@ -11,7 +11,5 @@ describe AQL::Node::Operator::Binary, '#aql' do
   let(:right) { AQL::Node::Literal.build(false) }
   let(:object) { class_under_test.new(left, right) }
 
-  let(:expected_aql) { '(true || false)' }
-
-  it_should_behave_like 'Node#aql'
+  expect_aql('(true || false)')
 end

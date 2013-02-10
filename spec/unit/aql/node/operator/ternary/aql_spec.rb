@@ -8,7 +8,5 @@ describe AQL::Node::Operator::Ternary, '#aql' do
 
   let(:object)    { described_class.new(condition, left, right) }
 
-  let(:expected_aql) { 'true ? "left" : "right"' }
-
-  it_should_behave_like 'Node#aql'
+  expect_aql('true ? "left" : "right"')
 end

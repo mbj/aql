@@ -9,9 +9,8 @@ describe AQL::Node::Block, '#aql' do
     end
 
     let(:name)         { 'foo bar' }
-    let(:expected_aql) { 'FILTER true' }
 
-    it_should_behave_like 'Node#aql'
+    expect_aql('FILTER true')
   end
 
   context 'with multiple elements' do
@@ -23,8 +22,7 @@ describe AQL::Node::Block, '#aql' do
     end
 
     let(:name)         { 'foo bar' }
-    let(:expected_aql) { 'FILTER true RETURN false' }
 
-    it_should_behave_like 'Node#aql'
+    expect_aql('FILTER true RETURN false')
   end
 end

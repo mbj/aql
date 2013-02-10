@@ -5,15 +5,13 @@ describe AQL::Node::Operation::Unary::Return, '#aql' do
 
   context 'with scalar expression' do
     let(:expression)   { AQL::Node::Literal.build(1) }
-    let(:expected_aql) { 'RETURN 1' }
 
-    it_should_behave_like 'Node#aql'
+    expect_aql('RETURN 1')
   end
 
   context 'with document expression' do
     let(:expression)   { AQL::Node::Literal.build(1 => 1) }
-    let(:expected_aql) { 'RETURN {1: 1}' }
 
-    it_should_behave_like 'Node#aql'
+    expect_aql('RETURN {1: 1}')
   end
 end

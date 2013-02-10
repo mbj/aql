@@ -5,9 +5,8 @@ describe AQL::Node::Operation::Unary::Filter, '#aql' do
 
   context 'with constant binary expression' do
     let(:expression)   { AQL::Node::Literal.build(true) }
-    let(:expected_aql) { 'FILTER true' }
 
-    it_should_behave_like 'Node#aql'
+    expect_aql('FILTER true')
   end
 
   context 'with binary expression' do
@@ -16,8 +15,6 @@ describe AQL::Node::Operation::Unary::Filter, '#aql' do
       AQL::Node::Operator::Binary::LessThan.new(foo, AQL::Node::Literal.build(9))
     end
 
-    let(:expected_aql) { 'FILTER (`foo` < 9)' }
-
-    it_should_behave_like 'Node#aql'
+    expect_aql('FILTER (`foo` < 9)')
   end
 end

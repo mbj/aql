@@ -9,8 +9,7 @@ describe AQL::Node::Literal::Composed::Document::Attribute, '#aql' do
     end
   end
 
-  let(:object)       { described_class.new(Node.new('foo'), Node.new('bar')) }
-  let(:expected_aql) { 'foo: bar' }
+  let(:object) { described_class.new(Node.new('foo'), Node.new('bar')) }
 
-  it_should_behave_like 'Node#aql'
+  expect_aql('foo: bar')
 end

@@ -13,10 +13,8 @@ describe AQL::Node::Literal::Composed::List, '#aql' do
 
   examples.each do |input, expectation|
     context "with #{input.inspect} as input" do
-      let(:input)        { input       }
-      let(:expected_aql) { expectation }
-
-      it_should_behave_like 'Node#aql'
+      let(:input) { input }
+      expect_aql(expectation)
     end
   end
 end

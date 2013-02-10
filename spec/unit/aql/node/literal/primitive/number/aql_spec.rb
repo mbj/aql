@@ -16,10 +16,8 @@ describe AQL::Node::Literal::Primitive::Number, '#aql' do
 
   examples.each do |number, expectation|
     context "with #{number.inspect} as input" do
-      let(:number)       { number      }
-      let(:expected_aql) { expectation }
-
-      it_should_behave_like 'Node#aql'
+      let(:number) { number }
+      expect_aql(expectation)
     end
   end
 end

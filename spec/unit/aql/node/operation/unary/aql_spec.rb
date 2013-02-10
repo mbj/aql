@@ -8,7 +8,5 @@ describe AQL::Node::Operation::Unary, '#aql' do
   end
 
   let(:object) { class_under_test.new(AQL::Node::Literal.build(1)) }
-  let(:expected_aql) { 'KEYWORD 1' }
-
-  it_should_behave_like 'Node#aql'
+  expect_aql('KEYWORD 1')
 end

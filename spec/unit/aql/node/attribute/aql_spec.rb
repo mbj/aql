@@ -10,18 +10,13 @@ describe AQL::Node::Attribute, '#aql' do
     let(:target_name) { 'foo' }
     let(:attribute_name) { 'bar' }
 
-    let(:expected_aql) { '`foo`.`bar`' }
-
-    it_should_behave_like 'Node#aql'
+    expect_aql('`foo`.`bar`')
   end
 
   context 'with keyword names' do
     let(:target_name) { 'sort' }
     let(:attribute_name) { 'filter' }
 
-    let(:expected_aql) { '`sort`.`filter`' }
-
-    it_should_behave_like 'Node#aql'
+    expect_aql('`sort`.`filter`')
   end
-
 end

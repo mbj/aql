@@ -13,9 +13,9 @@ describe AQL::Node::Literal::Composed::Document, '#aql' do
     {}                    => '{}',
     { 'name' => 'Peter' } => '{"name": "Peter"}',
     { 
-      'name'    => 'John', 
-      'likes'   => %w(Swimming Skiing),
-      'address' => {
+      'name'     => 'John', 
+      'likes'    => %w(Swimming Skiing),
+      'address'  => {
         'street' => 'Cucumber lane',
         'zip'    => '94242'
       }
@@ -25,9 +25,8 @@ describe AQL::Node::Literal::Composed::Document, '#aql' do
   examples.each do |input, expectation|
     context "with #{input.inspect} as input" do
       let(:input)        { input       }
-      let(:expected_aql) { expectation }
 
-      it_should_behave_like 'Node#aql'
+      expect_aql(expectation)
     end
   end
 end

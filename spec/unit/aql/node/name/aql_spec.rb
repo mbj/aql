@@ -6,16 +6,12 @@ describe AQL::Node::Name, '#aql' do
   context 'with non keyword name' do
     context 'not containing whitespace' do
       let(:name)         { 'foo' }
-      let(:expected_aql) { '`foo`' }
-
-      it_should_behave_like 'Node#aql'
+      expect_aql('`foo`')
     end
 
     context 'not containing' do
       let(:name)         { 'foo bar' }
-      let(:expected_aql) { '`foo bar`' }
-
-      it_should_behave_like 'Node#aql'
+      expect_aql('`foo bar`')
     end
   end
 
@@ -23,17 +19,13 @@ describe AQL::Node::Name, '#aql' do
     AQL::KEYWORDS.each do |keyword|
       context keyword do
         context 'uppercase' do
-          let(:name)         { keyword          }
-          let(:expected_aql) { %Q(`#{keyword}`) }
-
-          it_should_behave_like 'Node#aql'
+          let(:name) { keyword }
+          expect_aql(%Q(`#{keyword}`))
         end
 
         context 'lowercased' do
-          let(:name)         { keyword.downcase }
-          let(:expected_aql) { %Q(`#{keyword.downcase}`) }
-
-          it_should_behave_like 'Node#aql'
+          let(:name) { keyword.downcase }
+          expect_aql(%Q(`#{keyword.downcase}`))
         end
       end
     end

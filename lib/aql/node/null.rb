@@ -1,7 +1,7 @@
 module AQL
   class Node
     # Null node that does not emit anything
-    Null = Class.new(self) do
+    NULL = Class.new(self) do
 
     private
 

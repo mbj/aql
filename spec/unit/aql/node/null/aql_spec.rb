@@ -1,6 +1,6 @@
 require 'spec_helper'
 
-describe AQL::Node::Null, '#aql' do
+describe AQL::Node::NULL, '#aql' do
   let(:object) { described_class }
 
   let(:expected_aql) { '' }

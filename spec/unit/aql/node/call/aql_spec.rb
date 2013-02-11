@@ -28,4 +28,12 @@ describe AQL::Node::Call, '#aql' do
       FOO(1, 2)
     AQL
   end
+
+  context 'with FOR statement as argument' do
+    let(:arguments) { [AQL::Node::Operation::For.new(AQL::Node::Name.new('left'), AQL::Node::Name.new('right'), AQL::Node::Name.new('body'))] }
+
+    expect_aql <<-AQL
+      FOO((FOR `left` IN `right` `body`))
+    AQL
+  end
 end

@@ -43,6 +43,18 @@ module AQL
       append(close)
     end
 
+    # Emit in parantheses
+    #
+    # @return [self]
+    #
+    # @api private
+    #
+    def parantheses
+      append('(')
+      yield
+      append(')')
+    end
+
     # Emit binary
     #
     # @param [Node] left
@@ -54,11 +66,11 @@ module AQL
     # @api private
     #
     def binary(left, operator, right)
-      append('(')
-      left.visit(self)
-      append(" #{operator} ")
-      right.visit(self)
-      append(')')
+      parantheses do
+        left.visit(self)
+        append(" #{operator} ")
+        right.visit(self)
+      end
     end
 
     # Append content to buffer

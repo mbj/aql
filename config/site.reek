@@ -32,7 +32,8 @@ LongParameterList:
   overrides: {}
 FeatureEnvy:
   exclude: 
-  - AQL::Node::Block#emit # IMHO a false positive
+  - AQL::Node::Block#emit         # Definitive a false positive
+  - AQL::Node::Call#for_argument? # Definitive a false positive
   enabled: true
 ClassVariable:
   exclude: []

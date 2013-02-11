@@ -1,3 +1,4 @@
+require 'backports'
 require 'abstract_type'
 require 'adamantium'
 require 'composition'

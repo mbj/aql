@@ -13,20 +13,6 @@ module AQL
       @buffer = []
     end
 
-    # Test if buffer is on empty line
-    #
-    # @return [true]
-    #   if buffer is on empty line 
-    #
-    # @return [false]
-    #   otherwise
-    #
-    # @api private
-    #
-    def new_line?
-      @buffer.empty? || @buffer.last == "\n"
-    end
-
     # Emit wrapped delimited
     #
     # @param [String] open
@@ -38,21 +24,38 @@ module AQL
     # @api private
     #
     def wrap_delimited(open, nodes, close)
-      append(open)
-      delimited(nodes)
-      append(close)
+      parentheses(open, close) do
+        delimited(nodes)
+      end
     end
 
-    # Emit in parantheses
+    # Emit block in parentheses
     #
     # @return [self]
     #
     # @api private
     #
-    def parantheses
-      append('(')
+    def parentheses(open = '(', close = ')')
+      append(open)
       yield
-      append(')')
+      append(close)
+    end
+
+    # Emit delimited nodes
+    #
+    # @param [Enumerable<Node>] nodes
+    #
+    # @return [self]
+    #
+    # @api private
+    #
+    def delimited(nodes)
+      max = nodes.length - 1
+      nodes.each_with_index do |element, index|
+        element.visit(self)
+        delimiter if index < max
+      end
+      self
     end
 
     # Emit binary
@@ -66,7 +69,7 @@ module AQL
     # @api private
     #
     def binary(left, operator, right)
-      parantheses do
+      parentheses do
         left.visit(self)
         append(" #{operator} ")
         right.visit(self)
@@ -123,22 +126,6 @@ module AQL
     end
 
   private
-
-    # Emit delimited nodes
-    #
-    # @param [Enumerable<Node>] nodes
-    #
-    # @return [undefined]
-    #
-    # @api private
-    #
-    def delimited(nodes)
-      max = nodes.length - 1
-      nodes.each_with_index do |element, index|
-        element.visit(self)
-        delimiter if index < max
-      end
-    end
 
     # Emit delimiter
     #

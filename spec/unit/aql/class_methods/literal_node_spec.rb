@@ -3,19 +3,13 @@ require 'spec_helper'
 describe AQL, '.literal_node' do
   let(:object) { described_class }
 
-  # Use this for similar macros
-  def self.it_should_delegate_to(name, target)
-    subject { object.public_send(name,*arguments) }
+  subject { object.literal_node(value) }
 
-    let(:argument)  { mock('Argument') }
-    let(:arguments) { [argument]       }
-    let(:result)    { mock('Result')   }
+  let(:value)  { mock('Value') }
+  let(:result) { mock('Result') }
 
-    it "should delegate to #{target}" do
-      target.should_receive(:new).with(*arguments).and_return(result)
-      should be(result)
-    end
+  it 'should forward to AQL::Node::Literal.build' do
+    AQL::Node::Literal.should_receive(:build).with(value).and_return(result)
+    should be(result)
   end
-
-  it_should_delegate_to(:literal_node, AQL::Node::Literal)
 end

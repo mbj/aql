@@ -15,7 +15,7 @@ module AQL
   # @api private
   #
   def self.literal_node(value)
-    AQL::Node::Literal.new(value)
+    AQL::Node::Literal.build(value)
   end
 
   # Return aql name node 

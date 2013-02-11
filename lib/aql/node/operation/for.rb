@@ -19,9 +19,9 @@ module AQL
         def emit(buffer)
           buffer.append("#{keyword} ")
           left.visit(buffer)
-          buffer.append(' IN ')
+          buffer.append(' IN (')
           right.visit(buffer)
-          buffer.append(' (')
+          buffer.append(' ')
           body.visit(buffer)
           buffer.append(')')
         end

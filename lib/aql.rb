@@ -4,6 +4,31 @@ require 'composition'
 
 # Library namespace
 module AQL
+
+  # Return aql node for literal 
+  #
+  # @param [Object] value
+  #
+  # @return [AQL::Node::Literal]
+  #
+  # @api private
+  #
+  def self.literal_node(value)
+    AQL::Node::Literal.new(value)
+  end
+
+  # Return aql name node 
+  #
+  # @param [#to_s] name
+  #
+  # @return [AQL::Node::Name]
+  #
+  # @api private
+  #
+  def self.name_node(name)
+    AQL::Node::Name.new(name.to_s)
+  end
+
 end
 
 require 'aql/buffer'

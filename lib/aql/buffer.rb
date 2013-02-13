@@ -49,11 +49,11 @@ module AQL
     #
     # @api private
     #
-    def delimited(nodes)
+    def delimited(nodes, delimiter = ', ')
       max = nodes.length - 1
       nodes.each_with_index do |element, index|
         element.visit(self)
-        delimiter if index < max
+        append(delimiter) if index < max
       end
       self
     end
@@ -123,18 +123,6 @@ module AQL
       def self.utf8_encode(string)
         string
       end
-    end
-
-  private
-
-    # Emit delimiter
-    #
-    # @return [undefined]
-    #
-    # @api private
-    #
-    def delimiter
-      append(', ')
     end
 
   end

@@ -14,9 +14,9 @@ module AQL
         # @api private
         #
         def emit(buffer)
-          body = self.body
-          if body.length == 1
-            body.first.visit(buffer)
+          local = body
+          if local.length == 1
+            local.first.visit(buffer)
             return
           end
           emit_body(buffer)

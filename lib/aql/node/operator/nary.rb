@@ -14,6 +14,21 @@ module AQL
         # @api private
         #
         def emit(buffer)
+          body = self.body
+          if body.length == 1
+            body.first.visit(buffer)
+            return
+          end
+          emit_body(buffer)
+        end
+
+        # Emit body
+        #
+        # @rteturn [undefined]
+        #
+        # @api private
+        #
+        def emit_body(buffer)
           buffer.parentheses do
             buffer.delimited(body, " #{self.class::SYMBOL} ")
           end

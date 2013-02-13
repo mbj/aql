@@ -16,7 +16,7 @@ describe AQL::Node::Operator::Nary, '#aql' do
 
   context 'with one element body' do
     let(:body) { [a] }
-    expect_aql '(`a`)'
+    expect_aql '`a`'
   end
 
   context 'with two element body' do

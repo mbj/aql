@@ -17,6 +17,11 @@ module AQL
           buffer.binary(left, operator, right)
         end
 
+        # Binary assignment operator
+        class Assignment < self
+          SYMBOL = :'='
+        end
+
         # Binary equality operator
         class Equality < self
           SYMBOL = :==

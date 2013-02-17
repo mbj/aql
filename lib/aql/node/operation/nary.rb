@@ -17,12 +17,17 @@ module AQL
         #
         def emit(buffer)
           buffer.append("#{keyword} ")
-          buffer.wrap_delimited('', body, '')
+          buffer.delimited(body)
         end
 
         # Filter operation
         class Sort < self
           KEYWORD = :SORT
+        end
+
+        # Collect operation
+        class Collect < self
+          KEYWORD = :COLLECT
         end
 
       end

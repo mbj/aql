@@ -20,14 +20,35 @@ module AQL
           buffer.delimited(body)
         end
 
-        # Filter operation
+        # FILTER operation
         class Sort < self
           KEYWORD = :SORT
         end
 
-        # Collect operation
+        # COLLECT operation
         class Collect < self
           KEYWORD = :COLLECT
+
+          # COLLECT INTO operation 
+          class Into < self
+            include Composition.new(:body, :name)
+
+          private
+
+            # Emit node
+            #
+            # @param [Buffer] buffer
+            #
+            # @return [undefined]
+            #
+            # @api private
+            #
+            def emit(buffer)
+              super
+              buffer.append(' INTO ')
+              name.visit(buffer)
+            end
+          end
         end
 
       end

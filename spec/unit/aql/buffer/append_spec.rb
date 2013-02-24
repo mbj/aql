@@ -40,7 +40,7 @@ describe AQL::Buffer, '#append' do
   end
 
   context 'with non utf-8 encodable content' do
-    let(:content)          { "\xC3\x28" }
+    let(:content)          { "\xC3\x28".force_encoding('binary') }
 
     let(:expected_message) do
       case Devtools.rvm_name

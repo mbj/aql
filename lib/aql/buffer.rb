@@ -116,7 +116,7 @@ module AQL
       #
       # @param [String] string
       #
-      # @return [Stirng]
+      # @return [String]
       #
       # @api private
       #

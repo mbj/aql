@@ -41,7 +41,7 @@ module AQL
 
       # Emit arguments with parentheses
       #
-      # @param [Buffer] buffe
+      # @param [Buffer] buffer
       #
       # @return [undefined]
       #
@@ -51,10 +51,10 @@ module AQL
         buffer.parentheses { emit_arguments(buffer) }
       end
 
-      # Test for for body
+      # Test for `for` body
       #
       # @return [true]
-      #   if an instance of Node::Operation::For is the only argument 
+      #   if an instance of Node::Operation::For is the only argument
       #
       # @return [false]
       #   otherwise

@@ -6,7 +6,7 @@ require 'composition'
 # Library namespace
 module AQL
 
-  # Return aql node for literal 
+  # Return AQL node for literal
   #
   # @param [Object] value
   #
@@ -18,7 +18,7 @@ module AQL
     AQL::Node::Literal.build(value)
   end
 
-  # Return aql name node 
+  # Return AQL name node
   #
   # @param [#to_s] name
   #

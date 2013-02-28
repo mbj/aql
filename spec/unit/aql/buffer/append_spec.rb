@@ -14,7 +14,7 @@ describe AQL::Buffer, '#append' do
   this_spec = 'AQL::Bufffer#append'
 
   shared_examples_for this_spec do
-    it 'should append content to buffer' do 
+    it 'should append content to buffer' do
       expect { subject }.to change { object.content }.from('').to(expected_content)
     end
 

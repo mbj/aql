@@ -5,10 +5,10 @@ AQL
 [![Dependency Status](https://gemnasium.com/mbj/aql.png)](https://gemnasium.com/mbj/aql)
 [![Code Climate](https://codeclimate.com/github/mbj/aql.png)](https://codeclimate.com/github/mbj/aql)
 
-Generator for Arango Query Language [AQL](http://www.arangodb.org/manuals/current/Aql.html) under ruby. The backend for [veritas-arango-adapter](https://github.com/mbj/veritas-arango-adapter).
+Generator for the ArangoDB Query Language [AQL](http://www.arangodb.org/manuals/current/Aql.html) in Ruby. It is used as a backend for [veritas-arango-adapter](https://github.com/mbj/veritas-arango-adapter).
 
 Using AQL
-------------
+---------
 
 There is currently no stable public API.
 
@@ -17,14 +17,51 @@ Installation
 
 There is currently no gem release. Use git source in your Gemfile:
 
-```gem 'aql', :git => 'https://github.com/mbj/aql'```
+```ruby
+gem 'aql', :git => 'https://github.com/mbj/aql'
+```
 
 Or use ```:github => 'mbj/aql'``` if you prefer unencrypted protocols.
 
 Examples
 --------
 
-No public api => No examples. (Subjected to change).
+This gem does not have a public API. Please do not use it as a way to generate AQL statements by hand - this gem is not intended for this purpose. Instead write a library that uses this gem to generate AQL. Just to make it easier for you to get into the code, here is an example on how to generate a simple AQL statement:
+
+```ruby
+require 'aql'
+
+include AQL
+
+person    = Node::Name.new('person')
+firstname = Node::Name.new('firstname')
+lastname  = Node::Name.new('lastname')
+
+person_firstname = Node::Attribute.new(person, firstname)
+
+node = Node::Operation::For.new(
+  person, 
+  Node::Name.new('people'),
+  Node::Block.new(
+    [
+      Node::Operation::Unary::Filter.new(
+        Node::Operator::Binary::Equality.new(person_firstname, Node::Literal::Primitive::String.new('Markus'))
+      ),
+      Node::Operation::Unary::Return.new(
+        Node::Literal::Primitive::Composed::Document.new([
+          Node::Literal::Composed::Document::Attribute.new(
+            person_firstname,
+            Node::Attribute.new(person, Node::Name.new('lastname'))
+          )
+        ])
+      )
+    ]
+  )
+)
+
+puts node.aql
+#=> "FOR `person` IN `people` FILTER (`person`.`firstname` == "Markus") RETURN {`person`.`firstname`: `person`.`lastname`}"
+```
 
 Credits
 -------
@@ -46,4 +83,4 @@ Contributing
 License
 -------
 
-See LICENSE file.
+This gem is published under the MIT license. See LICENSE file.

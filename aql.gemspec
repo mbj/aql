@@ -6,7 +6,7 @@ Gem::Specification.new do |s|
 
   s.authors  = ['Markus Schirp']
   s.email    = 'mbj@seonic.net'
-  s.summary  = 'The ArangoDB AQL AST usefull for query generation'
+  s.summary  = 'The ArangoDB AQL AST. Intended for query generation.'
   s.homepage = 'http://github.com/mbj/aql'
 
   s.files            = `git ls-files`.split("\n")

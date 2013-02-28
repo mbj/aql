@@ -100,7 +100,7 @@ module AQL
     end
 
     if defined?(Encoding)
-      # Encode string in utf-8
+      # Encode string in UTF-8
       #
       # @param [String] string
       #

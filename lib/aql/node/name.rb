@@ -23,7 +23,7 @@ module AQL
       # @api private
       #
       def quoted_name
-        %Q(`#{name}`) 
+        %Q(`#{name}`)
       end
 
     end

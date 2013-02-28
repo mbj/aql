@@ -29,7 +29,7 @@ module AQL
         class Collect < self
           KEYWORD = :COLLECT
 
-          # COLLECT INTO operation 
+          # COLLECT INTO operation
           class Into < self
             include Composition.new(:body, :name)
 

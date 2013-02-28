@@ -10,7 +10,7 @@ module AQL
           #
           # @param [Hash] hash
           #
-          # @return [Node::Literal::Document]o
+          # @return [Node::Literal::Document]
           #
           # @api private
           #
@@ -26,7 +26,7 @@ module AQL
             include Composition.new(:key, :value)
 
           private
-            
+
             # Emit node
             #
             # @return [self]

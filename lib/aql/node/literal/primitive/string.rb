@@ -8,7 +8,7 @@ module AQL
 
         private
 
-          # Emit aql
+          # Emit AQL
           #
           # @param [Buffer] buffer
           #

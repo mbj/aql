@@ -1,5 +1,5 @@
 module AQL
-  # Abstract base class for aql nodes
+  # Abstract base class for AQL nodes
   class Node
     include Adamantium, AbstractType
 
@@ -31,7 +31,7 @@ module AQL
 
   private
 
-    # Emit aql
+    # Emit AQL
     #
     # @param [Emitter] emitter
     #

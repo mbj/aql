@@ -67,7 +67,7 @@ module AQL
           SYMBOL = :+
         end
 
-        # Binary substraction operator
+        # Binary subtraction operator
         class Subtraction < self
           SYMBOL = :-
         end

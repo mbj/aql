@@ -2,7 +2,7 @@ module AQL
   class Node
     # AST node for function call
     class Call < self
-      include Composition.new(:name, :arguments)
+      include Concord.new(:name, :arguments)
 
     private
 

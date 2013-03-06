@@ -3,7 +3,7 @@ module AQL
     class Operation
       # For operation
       class For < self
-        include Composition.new(:local, :source, :body)
+        include Concord.new(:local, :source, :body)
 
       private
 

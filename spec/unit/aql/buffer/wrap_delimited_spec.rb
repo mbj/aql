@@ -17,7 +17,7 @@ describe AQL::Buffer, '.wrap_delimited' do
   end
 
   class Node
-    include Composition.new(:name)
+    include Concord.new(:name)
 
     def visit(buffer)
       buffer.append(name)

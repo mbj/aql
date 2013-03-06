@@ -9,7 +9,7 @@ describe AQL::Buffer, '#binary' do
   let(:operator) { :operator           }
 
   class Node
-    include Composition.new(:name)
+    include Concord.new(:name)
 
     def visit(buffer)
       buffer.append(name)

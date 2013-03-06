@@ -3,7 +3,7 @@ module AQL
     class Literal
       # Base class for primitive literals
       class Primitive < self
-        include Composition.new(:value)
+        include Concord.new(:value)
       end
     end
   end

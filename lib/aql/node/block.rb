@@ -2,7 +2,7 @@ module AQL
   class Node
     # Block of AQL statements
     class Block < self
-      include Composition.new(:elements)
+      include Concord.new(:elements)
 
     private
 

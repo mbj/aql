@@ -2,7 +2,7 @@ module AQL
   class Node
     # Attribute node
     class Attribute < self
-      include Composition.new(:target, :name)
+      include Concord.new(:target, :name)
 
     private
 

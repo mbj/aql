@@ -2,7 +2,7 @@ require 'spec_helper'
 
 describe AQL::Node::Literal::Composed::Document::Attribute, '#aql' do
   class Node
-    include Composition.new(:token)
+    include Concord.new(:token)
 
     def visit(buffer)
       buffer.append(token)

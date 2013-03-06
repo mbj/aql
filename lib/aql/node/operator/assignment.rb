@@ -3,7 +3,7 @@ module AQL
     class Operator
       # Assignment operator
       class Assignment < self
-        include Composition.new(:name, :value)
+        include Concord.new(:name, :value)
         SYMBOL = :'='
 
       private

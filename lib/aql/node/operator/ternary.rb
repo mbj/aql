@@ -3,7 +3,7 @@ module AQL
     class Operator
       # Ternary operator
       class Ternary < self
-        include Composition.new(:condition, :left, :right)
+        include Concord.new(:condition, :left, :right)
 
         SYMBOL = :'?'
 

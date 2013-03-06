@@ -13,7 +13,7 @@ describe AQL::Node::Literal, '#handle' do
 
   let(:class_under_test) do
     Class.new(described_class) do
-      include Composition.new(:object)
+      include Concord.new(:object)
       handle(Dummy)
     end
   end

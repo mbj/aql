@@ -1,7 +1,7 @@
 require 'backports'
 require 'abstract_type'
 require 'adamantium'
-require 'composition'
+require 'concord'
 
 # Library namespace
 module AQL

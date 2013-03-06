@@ -3,7 +3,7 @@ module AQL
     class Literal
       # Singleton literal
       class Singleton < self
-        include Composition.new(:token)
+        include Concord.new(:token)
 
         handle(NilClass)
         handle(TrueClass)

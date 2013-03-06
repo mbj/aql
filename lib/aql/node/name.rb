@@ -2,7 +2,7 @@ module AQL
   class Node
     # Generic AQL object name
     class Name < self
-      include Composition.new(:name)
+      include Concord.new(:name)
 
     private
 

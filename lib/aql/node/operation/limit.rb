@@ -5,7 +5,7 @@ module AQL
       class Limit < self
         KEYWORD = :LIMIT
 
-        include Composition.new(:count, :offset)
+        include Concord.new(:count, :offset)
 
       private
 

@@ -23,7 +23,7 @@ module AQL
 
           # Literal document attribute
           class Attribute < Literal
-            include Composition.new(:key, :value)
+            include Concord.new(:key, :value)
 
           private
 

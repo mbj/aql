@@ -3,7 +3,7 @@ module AQL
     class Operation
       # Base class for nary operations
       class Nary < self
-        include Composition.new(:body)
+        include Concord.new(:body)
 
       private
 
@@ -31,7 +31,7 @@ module AQL
 
           # COLLECT INTO operation
           class Into < self
-            include Composition.new(:body, :name)
+            include Concord.new(:body, :name)
 
           private
 

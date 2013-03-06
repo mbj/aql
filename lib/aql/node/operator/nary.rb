@@ -3,7 +3,7 @@ module AQL
     class Operator
       # Base class for n-ary operators
       class Nary < self
-        include Composition.new(:body)
+        include Concord.new(:body)
 
       private
 

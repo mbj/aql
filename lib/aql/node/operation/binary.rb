@@ -3,7 +3,7 @@ module AQL
     class Operation
       # Base class for binary operations
       class Binary < self
-        include Composition.new(:left, :right)
+        include Concord.new(:left, :right)
 
         # Binary let operation
         class Let < self

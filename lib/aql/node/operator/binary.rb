@@ -3,7 +3,7 @@ module AQL
     class Operator
       # Base class for binary operators
       class Binary < self
-        include Composition.new(:left, :right)
+        include Concord.new(:left, :right)
 
       private
 

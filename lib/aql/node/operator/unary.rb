@@ -3,7 +3,7 @@ module AQL
     class Operator
       # Base class for unary operators
       class Unary < self
-        include Composition.new(:target)
+        include Concord.new(:target)
 
       private
 

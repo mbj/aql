@@ -3,7 +3,7 @@ module AQL
     class Literal
       # Base class for composed literals
       class Composed < self
-        include Composition.new(:body)
+        include Concord.new(:body)
       end
     end
   end

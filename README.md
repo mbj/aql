@@ -5,7 +5,7 @@ AQL
 [![Dependency Status](https://gemnasium.com/mbj/aql.png)](https://gemnasium.com/mbj/aql)
 [![Code Climate](https://codeclimate.com/github/mbj/aql.png)](https://codeclimate.com/github/mbj/aql)
 
-Generator for the ArangoDB Query Language [AQL](http://www.arangodb.org/manuals/current/Aql.html) in Ruby. It is used as a backend for [veritas-arango-adapter](https://github.com/mbj/veritas-arango-adapter).
+Generator for the ArangoDB Query Language [AQL](http://www.arangodb.org/manuals/current/Aql.html) in Ruby. It is used as a backend for [axiom-arango-adapter](https://github.com/mbj/axiom-arango-adapter).
 
 Using AQL
 ---------

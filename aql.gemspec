@@ -8,6 +8,7 @@ Gem::Specification.new do |s|
   s.email    = 'mbj@seonic.net'
   s.summary  = 'The ArangoDB AQL AST. Intended for query generation.'
   s.homepage = 'http://github.com/mbj/aql'
+  s.license  = 'MIT'
 
   s.files            = `git ls-files`.split("\n")
   s.test_files       = `git ls-files -- {spec,features}/*`.split("\n")

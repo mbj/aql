@@ -15,18 +15,14 @@ There is currently no stable public API.
 Installation
 ------------
 
-There is currently no gem release. Use git source in your Gemfile:
-
-```ruby
-gem 'aql', :git => 'https://github.com/mbj/aql'
-```
-
-Or use ```:github => 'mbj/aql'``` if you prefer unencrypted protocols.
+Install the gem `aql` via your preferred method.
 
 Examples
 --------
 
-This gem does not have a public API. Please do not use it as a way to generate AQL statements by hand - this gem is not intended for this purpose. Instead write a library that uses this gem to generate AQL. Just to make it easier for you to get into the code, here is an example on how to generate a simple AQL statement:
+This gem does not have a public API. Please do not use it as a way to generate AQL statements by hand - this gem is not intended for this purpose. 
+Instead write a library that uses this gem to generate AQL. 
+Just to make it easier for you to get into the code, here is an example on how to generate a simple AQL statement:
 
 ```ruby
 require 'aql'

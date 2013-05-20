@@ -6,6 +6,14 @@ module AQL
         include Concord.new(:name, :value)
         SYMBOL = :'='
 
+        # Return name
+        #
+        # @return [AQL] name
+        #
+        # @api private
+        #
+        attr_reader :name
+
       private
 
         # Emit into buffer

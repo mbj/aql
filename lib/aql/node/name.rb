@@ -4,6 +4,14 @@ module AQL
     class Name < self
       include Concord.new(:name)
 
+      # Return name
+      #
+      # @return [String]
+      #
+      # @api private
+      #
+      attr_reader :name
+
     private
 
       # Emit node

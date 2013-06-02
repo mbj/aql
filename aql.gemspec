@@ -5,7 +5,7 @@ Gem::Specification.new do |s|
   s.version  = '0.0.3'
 
   s.authors  = ['Markus Schirp']
-  s.email    = 'mbj@seonic.net'
+  s.email    = 'mbj@schirp-dso.com'
   s.summary  = 'The ArangoDB AQL AST. Intended for query generation.'
   s.homepage = 'http://github.com/mbj/aql'
   s.license  = 'MIT'
